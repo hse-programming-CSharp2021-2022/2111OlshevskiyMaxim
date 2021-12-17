@@ -1,0 +1,24 @@
+﻿<Window x:Class="Homework11.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Homework11"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid HorizontalAlignment="Stretch" Background="LightBlue" VerticalAlignment="Stretch" ShowGridLines="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Button Name="button" Content="Clear" Grid.Row="1" Grid.Column="0" Click="button_Click"/>
+        <Slider Grid.Row="1" Grid.Column="1" Name="sliderH" Margin="20" Maximum="{Binding ElementName=canvas, Path=ActualWidth}" ValueChanged="sliderH_ValueChanged"/>
+        <Slider Grid.Row="0" Grid.Column="0" Name="sliderV" Margin="20" Orientation="Vertical" Maximum="{Binding ElementName=canvas, Path=ActualHeight}" ValueChanged="sliderV_ValueChanged"/>
+        <Canvas Grid.Row="0" Grid.Column="1" Name="canvas" Background="LightYellow"/>
+
+    </Grid>
+</Window>
